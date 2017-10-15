@@ -26,6 +26,7 @@ on the image and fill it in with some data.
 Create a Model for your entity in a database
 Let's create models in our JavaScript code that represent database entities.
 First we create file author.js.
+```js
 import {Model} from 'vp-orm'
 
 class Author extends Model {
@@ -35,6 +36,7 @@ class Author extends Model {
     static lastName = 'last_name'
     static birthYear = 'birth_date'
 }
+```
 
 Next we are going to create file book.js.
 import {Model} from 'vp-orm'
