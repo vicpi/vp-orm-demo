@@ -1,16 +1,18 @@
-vp-orm
+# vp-orm
 
-Installation
+Object Relational Mapping for JavaScript and Node.js.
 
-via NPM
+## Installation
+
+#### via NPM
 
 npm install --save vp-orm
 
-via yarn
+#### via yarn
 
 yarn add vp-orm
 
-Usage
+## Usage
 
 Suppose your database structure looks like the following:
 <database structure image>
@@ -76,6 +78,6 @@ Update the name of the author
 
 // a lot of examples
 
-License
+## License
 
 MIT
