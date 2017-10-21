@@ -2,4 +2,6 @@
 require("babel-core/register");
 require("babel-polyfill");
 
-require('./get-all-authors')
+require('./select')
+require('./insert')
+require('./update')

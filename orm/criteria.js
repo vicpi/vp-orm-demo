@@ -6,7 +6,7 @@ import {Order, TOrder} from './order'
 
 class Criteria {
     wherePart: Expression|null = null
-    orderPart = null
+    orderPart = []
     limitPart: Limit|null = null
 
     where(expression: Expression) {
@@ -19,16 +19,13 @@ class Criteria {
         return this
     }
 
-    order(ordersOrOrder: TOrder|Array<TOrder>) {
-        const orders = Array.isArray(ordersOrOrder)
-            ? ordersOrOrder
-            : [ordersOrOrder]
-        this.orderPart = orders.map(item => new Order(item.column, item.sorting))
+    order(column: string, sorting: string) {
+        this.orderPart.push(new Order(column, sorting))
         return this
     }
 
     _getOrderPart() {
-        return this.orderPart === null
+        return this.orderPart.length === 0
             ? ''
             : `ORDER BY ` + this.orderPart.join(', ')
     }

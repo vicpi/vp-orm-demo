@@ -10,7 +10,7 @@ class Model {
     toObject() {
         const json = {}
         for (let property in this) {
-            json[property] = this[property]
+            json[this.constructor[property]] = this[property]
         }
         return json
     }

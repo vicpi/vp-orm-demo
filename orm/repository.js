@@ -23,6 +23,10 @@ class Repository {
 
     findAll(): TPromise {
         return new Promise((resolve, reject) => {
+            const query = `select * from ${this.model.table}`
+            console.log('---------------------- SELECT ------------------')
+            console.log(query)
+            console.log('------------------------------------------------')
             this.connection.query(`select * from ${this.model.table}`,
                 (error, results, fields) => {
                     if (error) {

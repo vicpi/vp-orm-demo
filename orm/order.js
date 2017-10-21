@@ -4,6 +4,9 @@ class Order {
     column: string|null = null
     sorting: string = 'ASC'
 
+    static asc = 'ASC'
+    static desc = 'DESC'
+
     constructor(column: string, sorting: string) {
         this.column = column
         if (sorting !== undefined) {

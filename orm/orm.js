@@ -36,7 +36,7 @@ class ORM {
         return new Repository(this.getConnection(), model)
     }
 
-    static getDataMapper() {
+    static createDataMapper() {
         if (this.dataMapper === null) {
             this.dataMapper = new DataMapper(this.getConnection())
         }

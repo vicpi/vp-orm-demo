@@ -24,9 +24,13 @@ insert into author (first_name, last_name, birth_date)
 
 insert into book (title, year, author_id)
     values ('Harry Potter and the Philosopher\'s Stone', '1997-07-26', 1);
-
 insert into book (title, year, author_id)
     values ('The Princess and the Pea', '1835-01-01', 2);
-
 insert into book (title, year, author_id)
     values ('The Alchemist', '1988-01-01', 3);
+insert into book (title, year, author_id)
+    values ('Eleven Minutes', '2003-01-01', 3);
+insert into book (title, year, author_id)
+    values ('The Pilgrimage', '1987-01-01', 3);
+insert into book (title, year, author_id)
+    values ('The Zahir', '2005-01-01', 3);
