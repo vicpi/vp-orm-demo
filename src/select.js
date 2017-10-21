@@ -60,7 +60,8 @@ async function getAllBooksByAuthor(authorId) {
         )
         .order(Book.title)
         .order(Book.year)
-        .limit(4, 0)
+        .limit(4)
+        .offset(3)
     const booksByAuthor = await bookRepository.find(bookCriteria)
     console.log(booksByAuthor)
 }

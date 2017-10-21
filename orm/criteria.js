@@ -14,8 +14,19 @@ class Criteria {
         return this
     }
 
-    limit(limit: number, offset: number) {
-        this.limitPart = new Limit(limit, offset)
+    limit(limit: number) {
+        if (this.limitPart === null) {
+            this.limitPart = new Limit()
+        }
+        this.limitPart.setLimit(limit)
+        return this
+    }
+
+    offset(offset: number) {
+        if (this.limitPart === null) {
+            this.limitPart = new Limit()
+        }
+        this.limitPart.setOffset(offset)
         return this
     }
 
@@ -39,7 +50,7 @@ class Criteria {
     _getLimitPart() {
         return this.limitPart === null
             ? ''
-            : 'LIMIT ' + String(this.limitPart)
+            : String(this.limitPart)
     }
 
     toString() {

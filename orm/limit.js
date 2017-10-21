@@ -4,17 +4,24 @@ class Limit {
     limit: number
     offset: number
 
-    constructor(limit: number, offset: number) {
-        this.limit = limit;
-        if (offset !== undefined) {
-            this.offset = offset;
-        }
+    setLimit(limit: number) {
+        this.limit = limit
+    }
+
+    setOffset(offset: number) {
+        this.offset = offset
     }
 
     toString() {
-        let string = String(this.limit)
+        let string = ''
+        if (this.limit === undefined && this.offset !== undefined) {
+            throw new Error("Limit: You can't set offset without limit")
+        }
+        if (this.limit !== undefined) {
+            string += `LIMIT ${this.limit} `
+        }
         if (this.offset !== undefined) {
-            string += ` OFFSET ${this.offset}`
+            string += `OFFSET ${this.offset}`
         }
         return string
     }
