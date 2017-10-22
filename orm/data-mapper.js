@@ -9,9 +9,9 @@ class DataMapper {
         this.connection = connection
     }
 
-    insert = (model: Model) => {
+    insert = (modelClass: any, model: Model) => {
         return new Promise((resolve, reject) => {
-            const sqlQuery = `insert into ${model.constructor.table} set ?`
+            const sqlQuery = `insert into ${modelClass.table} set ?`
             console.log('---------------------- INSERT ------------------')
             console.log(sqlQuery)
             console.log('------------------------------------------------')
@@ -28,9 +28,9 @@ class DataMapper {
         })
     }
 
-    update = (model: Model, criteria: TCriteria) => {
+    update = (modelClass: any, model: Model, criteria: TCriteria) => {
         return new Promise((resolve, reject) => {
-            const sqlQuery = `update ${model.constructor.table} set ? ${criteria}`
+            const sqlQuery = `update ${modelClass.table} set ? ${criteria}`
             console.log('---------------------- UPDATE ------------------')
             console.log(sqlQuery)
             console.log('------------------------------------------------')
@@ -47,9 +47,9 @@ class DataMapper {
         });
     }
 
-    delete = (model: Model, criteria: TCriteria) => {
+    delete = (modelClass: any, criteria: TCriteria) => {
         return new Promise((resolve, reject) => {
-            const sqlQuery = `delete from ${model.constructor.table} ${criteria}`
+            const sqlQuery = `delete from ${modelClass.table} ${criteria}`
             console.log('---------------------- DELETE -------------------')
             console.log(sqlQuery)
             console.log('-------------------------------------------------')

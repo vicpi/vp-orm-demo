@@ -1,6 +1,6 @@
 import {Model} from '../../orm'
 
-class Book extends Model {
+class BookModel extends Model {
     static table = 'book'
 
     static id = 'id'
@@ -9,4 +9,4 @@ class Book extends Model {
     static authorId = 'author_id'
 }
 
-export default Book
+export default BookModel

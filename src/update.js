@@ -1,13 +1,12 @@
 import mysql from 'mysql'
 import config from './config.js'
 import {ORM} from '../orm'
-import Author from './models/author'
+import BookModel from './models/book-model'
 import {
     Criteria,
     quote,
     expr
 } from '../orm'
-import Book from './models/book'
 
 ORM.configure({
     host: config.DATABASE_HOST,
@@ -17,19 +16,22 @@ ORM.configure({
 })
 
 async function updateBook() {
+    // update book set ? WHERE (id = 4)
     const dataMapper = ORM.createDataMapper()
-    let books = await ORM.createRepository(Book)
+    let books = await ORM.createRepository(BookModel)
         .find(new Criteria().where(
-            expr(Book.authorId, '=', 3)
+            expr(BookModel.authorId, '=', 3)
         ))
     const book = books[0]
     book.year = '1996-01-01'
     const updateCriteria = new Criteria()
-        .where(expr(
-            Book.id, '=', 4
-        ))
-    const status = await dataMapper.update(book, updateCriteria)
-    // console.log(status)
+        .where(
+            expr(
+                BookModel.id, '=', 4
+            )
+        )
+    const status = await dataMapper.update(BookModel, book, updateCriteria)
+    console.log(status)
 }
 
 updateBook()

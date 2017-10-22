@@ -15,16 +15,14 @@ ORM.configure({
     database: config.DATABASE_NAME
 })
 
-async function insertBook() {
+async function deleteBook() {
     const dataMapper = ORM.createDataMapper()
-    const book = new BookModel({
-        title: 'The Fifth Mountain',
-        year: '1996-01-01',
-        author_id: 3
-    })
-    // console.log(book.toObject())
-    const status = await dataMapper.insert(BookModel, book)
+    const deleteCriteria = new Criteria()
+        .where(
+            expr(BookModel.id, '>', 18)
+        )
+    const status = await dataMapper.delete(BookModel, deleteCriteria)
     // console.log(status)
 }
 
-insertBook()
+deleteBook()
