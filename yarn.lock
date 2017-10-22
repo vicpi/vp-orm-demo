@@ -1752,6 +1752,12 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vp-orm@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vp-orm/-/vp-orm-1.0.0.tgz#6c241d72d3493771877325aaa853e30fb8156d24"
+  dependencies:
+    mysql "^2.13.0"
+
 wide-align@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/wide-align/-/wide-align-1.1.2.tgz#571e0f1b0604636ebc0dfc21b0339bbe31341710"

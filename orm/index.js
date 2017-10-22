@@ -1,4 +1,4 @@
-const {ORM} = require('./orm')
+const {VpOrm} = require('./orm')
 const {Criteria} = require('./criteria')
 const {DataMapper} = require('./data-mapper')
 const {Expression, expr, quote} = require('./expression')
@@ -8,7 +8,7 @@ const {Limit} = require('./limit')
 const {Order} = require('./order')
 
 module.exports = {
-    ORM,
+    VpOrm,
     Model,
     Repository,
     DataMapper,

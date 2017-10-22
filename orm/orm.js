@@ -14,7 +14,7 @@ export type TConnection = {
     query: (string, any, any) => void
 }
 
-class ORM {
+class VpOrm {
     static connection = null
     static dataMapper = null
 
@@ -45,5 +45,5 @@ class ORM {
 }
 
 export {
-    ORM
+    VpOrm
 }

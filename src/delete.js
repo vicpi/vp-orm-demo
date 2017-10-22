@@ -1,14 +1,14 @@
 import mysql from 'mysql'
 import config from './config.js'
-import {ORM, Order} from '../orm'
+import {VpOrm, Order} from 'vp-orm'
 import BookModel from './models/book-model'
 import {
     Criteria,
     quote,
     expr
-} from '../orm'
+} from 'vp-orm'
 
-ORM.configure({
+VpOrm.configure({
     host: config.DATABASE_HOST,
     user: config.DATABASE_USER,
     password: config.DATABASE_PASSWORD,
@@ -16,7 +16,7 @@ ORM.configure({
 })
 
 async function deleteBook() {
-    const dataMapper = ORM.createDataMapper()
+    const dataMapper = VpOrm.createDataMapper()
     const deleteCriteria = new Criteria()
         .where(
             expr(BookModel.title, '=', quote('The Fifth Mountain'))
