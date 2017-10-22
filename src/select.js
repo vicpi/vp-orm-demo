@@ -21,22 +21,22 @@ async function getAllAuthors() {
     const connection = ORM.getConnection()
     const authorRepository = ORM.createRepository(AuthorModel)
     const authors = await authorRepository.findAll()
-    console.log(authors)
+    authors.forEach(author => console.log(author.getFullName()))
 }
 
 getAllAuthors()
 
-async function get2AuthorsOrderedByLastName() {
+async function get2AuthorsOrderedByBirthDate() {
     // select * from author  ORDER BY last_name DESC LIMIT 2
     const authorRepository = ORM.createRepository(AuthorModel)
     const criteria = new Criteria()
         .limit(2)
-        .order(AuthorModel.lastName, Order.desc)
+        .order(AuthorModel.birthDate, Order.desc)
     const authors = await authorRepository.find(criteria)
     console.log(authors)
 }
 
-get2AuthorsOrderedByLastName()
+get2AuthorsOrderedByBirthDate()
 
 async function getAuthorsAfter1900() {
     // select * from author WHERE (birth_date > "1900")

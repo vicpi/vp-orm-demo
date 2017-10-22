@@ -1,6 +1,6 @@
 import mysql from 'mysql'
 import config from './config.js'
-import {ORM} from '../orm'
+import {ORM, Order} from '../orm'
 import BookModel from './models/book-model'
 import {
     Criteria,
@@ -19,8 +19,10 @@ async function deleteBook() {
     const dataMapper = ORM.createDataMapper()
     const deleteCriteria = new Criteria()
         .where(
-            expr(BookModel.id, '>', 18)
+            expr(BookModel.title, '=', quote('The Fifth Mountain'))
         )
+        .order(BookModel.id, Order.desc)
+        .limit(2)
     const status = await dataMapper.delete(BookModel, deleteCriteria)
     // console.log(status)
 }

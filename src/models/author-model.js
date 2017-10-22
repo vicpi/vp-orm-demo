@@ -7,6 +7,10 @@ class AuthorModel extends Model {
     static firstName = 'first_name'
     static lastName = 'last_name'
     static birthDate = 'birth_date'
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
 }
 
 export default AuthorModel
