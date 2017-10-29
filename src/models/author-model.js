@@ -1,4 +1,4 @@
-import {Model} from '../../orm'
+import {Model} from 'vp-orm'
 
 class AuthorModel extends Model {
     static table = 'author'
