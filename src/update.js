@@ -34,4 +34,4 @@ async function updateBook() {
     console.log(status)
 }
 
-updateBook()
+// updateBook()

@@ -21,7 +21,10 @@ async function getAllAuthors() {
     const connection = VpOrm.getConnection()
     const authorRepository = VpOrm.createRepository(AuthorModel)
     const authors = await authorRepository.findAll()
-    authors.forEach(author => console.log(author.getFullName()))
+    authors.forEach(author => {
+        console.log(author.getFullName())
+        author.books.forEach(book => console.log(book.title))
+    })
 }
 
 getAllAuthors()
@@ -36,7 +39,7 @@ async function get2AuthorsOrderedByBirthDate() {
     console.log(authors)
 }
 
-get2AuthorsOrderedByBirthDate()
+// get2AuthorsOrderedByBirthDate()
 
 async function getAuthorsAfter1900() {
     // select * from author WHERE (birth_date > "1900")
