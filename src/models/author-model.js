@@ -9,11 +9,10 @@ class AuthorModel extends Model {
     static lastName = 'last_name'
     static birthDate = 'birth_date'
 
-    static books = {
-        type: 'foreign_key',
+    static book = {
+        type: '',
         foreignModel: BookModel,
-        foreignKey: BookModel.authorId,
-        foreignModelKey: 'authorId'
+        key: 'authorId'
     }
 
     getFullName() {

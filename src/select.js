@@ -21,9 +21,10 @@ async function getAllAuthors() {
     const connection = VpOrm.getConnection()
     const authorRepository = VpOrm.createRepository(AuthorModel)
     const authors = await authorRepository.findAll()
-    authors.forEach(author => {
-        console.log(author.getFullName())
-        author.books.forEach(book => console.log(book.title))
+    authors.forEach(async (author) => {
+        const books = await author.getBookList()
+        console.log(books);
+        // author.books.forEach(book => console.log(book.title))
     })
 }
 
