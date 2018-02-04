@@ -5,11 +5,14 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src/ -d dist/",
-    "start": "node dist/index.js"
+    "start": "npm run build; node dist/entry.js"
   },
   "author": "Viktor Pyskunov",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
     "mysql": "^2.13.0",
     "vp-orm": "^1.0.0"
   },
@@ -23,6 +26,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
-    "flow-bin": "^0.56.0"
+    "flow-bin": "^0.56.0",
+    "nodemon": "^1.14.12"
   }
 }
