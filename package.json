@@ -1,11 +1,11 @@
 {
-  "name": "vp-orm-example",
+  "name": "vp-orm-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple application demonstrating how to use vp-orm, a simple ORM for JavaScript and Node.js",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src/ -d dist/",
-    "start": "npm run build; node dist/entry.js"
+    "start": "npm run build; node dist/index.js"
   },
   "author": "Viktor Pyskunov",
   "license": "MIT",
