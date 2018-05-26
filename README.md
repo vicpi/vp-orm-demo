@@ -1,7 +1,7 @@
 # vp-orm demo
 
 Simple application demonstrating how to use vp-orm, a simple ORM for JavaScript and Node.js.
-It shows how to use ORM to perform some typical interactions with the database.
+It shows how to perform some typical interactions with the database.
 
 ## Prerequisites
 
@@ -9,8 +9,8 @@ You need to have MySQL (https://www.mysql.com/) installed.
 
 ## Installation and running locally
 
-1. Clone the project from Github.
-1. Go to the project root.
+1. Run `git clone git@github.com:vicpi/vp-orm-demo.git`.
+1. `cd vp-orm-demo`.
 1. Run `npm install`.
 1. Run `mysql -uroot < database-structure.sql`. This will create a database called author_books in MySQL and fill it with sample data.
 1. Run `npm start`.
